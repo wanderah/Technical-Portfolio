@@ -1,0 +1,110 @@
+/* grades.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+}
+
+h2 {
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Input Form Styles */
+#addStudentForm {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+#addStudentForm input[type="text"], 
+#addStudentForm input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+#addStudentForm button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addStudentForm button:hover {
+    background-color: #1e7e34;
+}
+
+/* Dashboard Styles */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.average-display {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Table Styles */
+#gradesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#gradesTable th, #gradesTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#gradesTable th {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Delete Button Style */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Task 2.d: Highlight grades above 60 in green */
+.highlight {
+    background-color: #e6ffed; /* Light green background */
+    font-weight: bold;
+    color: #1e7e34; /* Darker green text */
+}

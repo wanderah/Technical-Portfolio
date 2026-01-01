@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLeaf Garden - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">Volunteer & Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h1>Volunteer & Contact Form</h1>
+
+        <section id="contact-form-section">
+            <p style="text-align: center;">Join our community! Fill out the form below to register your interest.</p>
+            
+            <form id="volunteer-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="name-error" class="error-message">Name cannot be empty and must be at least 3 characters.</div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="email-error" class="error-message">Please enter a valid email address.</div>
+                
+                <label for="role">Role Interest:</label>
+                <select id="role" name="role">
+                    <option value="planting">Planting & Harvesting</option>
+                    <option value="maintenance">Maintenance & Tools</option>
+                    <option value="education">Education Outreach</option>
+                </select>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <hr>
+
+                <label style="font-weight: normal;">
+                    <input type="checkbox" id="consent-updates" name="consent-updates" value="yes">
+                    I consent to receiving email updates about garden events.
+                </label>
+                <br>
+                <label style="font-weight: normal;">
+                    <input type="checkbox" id="consent-share" name="consent-share" value="yes" required>
+                    I agree to the volunteer terms and conditions.
+                </label>
+                <div id="consent-error" class="error-message">You must agree to the volunteer terms.</div>
+                
+                <button type="submit" class="cta-button" style="margin-top: 20px; width: 100%;">Submit Application</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

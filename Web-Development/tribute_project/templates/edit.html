@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Comment</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Your Tribute Message</h1>
+        
+        <form method="POST" action="{{ url_for('update', id=detail.id) }}">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="first_name" value="{{ detail.first_name }}" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="last_name" value="{{ detail.last_name }}" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment_text" rows="4" required>{{ detail.comment_text }}</textarea>
+
+            <button type="submit" style="background-color: #ffc107; color: #333;">Save Changes</button>
+            <a href="{{ url_for('home') }}" style="margin-left: 10px; color: #007bff;">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

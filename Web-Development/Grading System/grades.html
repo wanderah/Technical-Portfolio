@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Dashboard</title>
+    <link rel="stylesheet" href="grades.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Grade Dashboard</h1>
+
+        <div class="input-section">
+            <h2>Add New Student</h2>
+            <form id="addStudentForm">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" required>
+
+                <label for="studentGrade">Grade (0-100):</label>
+                <input type="number" id="studentGrade" min="0" max="100" required>
+                
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="dashboard-section">
+            <h2>Records & Analysis</h2>
+            
+            <div class="controls">
+                <label for="sortOrder">Sort by Grade:</label>
+                <select id="sortOrder">
+                    <option value="none">Default Order</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                
+                <div class="average-display">
+                    Average Grade: <span id="averageGrade">--</span>
+                </div>
+            </div>
+
+            <table id="gradesTable">
+                <thead>
+                    <tr>
+                        <th>Delete</th>
+                        <th>Name</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="gradesTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="grades.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLeaf Garden - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">Volunteer & Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h1 id="main-greeting">Welcome to GreenLeaf Garden!</h1>
+
+        <div id="slideshow-container">
+            <img class="slide fade" src="garden_img_1.jpg" alt="Garden bed during spring planting">
+            <img class="slide fade" src="garden_img_2.jpg" alt="Volunteers working in the garden" style="display: none;">
+            <img class="slide fade" src="garden_img_3.jpg" alt="Garden flowers in bloom" style="display: none;">
+        </div>
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>GreenLeaf Garden is a dedicated community space fostering urban agriculture, sustainability education, and local community bonding. We are 100% volunteer-run and committed to providing fresh produce and green space to the neighborhood.</p>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Jan 15 2026: Spring Planting Workshop (9 AM - 12 PM)</li>
+                <li>Feb 22 2026: Volunteer Orientation (1 PM - 3 PM)</li>
+                <li>Mar 27 2026: Garden Harvest Festival!</li>
+            </ul>
+        </section>
+        
+        <section id="cta-section">
+            <div class="cta-wrapper">
+                <h2>Get Involved Today</h2>
+                <button id="volunteer-cta" class="cta-button">I Want to Volunteer!</button>
+            </div>
+        </section>
+
+        <div id="signup-widget" class="container" style="display: none; background: #fff8e1; padding: 20px; margin-top: 20px; border: 1px dashed var(--green-light);">
+            <h3>Quick Sign-up</h3>
+            <p>Enter your email and we'll send you details right away!</p>
+            <form id="quick-signup-form">
+                <label for="quick-email">Email:</label>
+                <input type="email" id="quick-email" required>
+                <button type="submit" class="cta-button" style="margin-top: 10px;">Sign Up</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

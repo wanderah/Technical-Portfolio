@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Jane Doe</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>A Tribute to Jane Doe</h1>
+        
+        <img 
+            src="{{ url_for('static', filename='images/honoree.jpg') }}" 
+            alt="Picture of the Honoree" 
+            class="honoree-image">
+
+        <h2>Biography</h2>
+        <div class="bio-text">
+            <p>Jane Doe was a pioneering computer scientist who laid the groundwork for modern data compression algorithms. Her dedication to open-source principles revolutionized file sharing and storage efficiency worldwide. She passed away in 2025.</p>
+        </div>
+
+        <h2>Accomplishments</h2>
+        <ul class="accomplishments">
+            <li>Developed the lossless compression algorithm (LCA) in 2010.</li>
+            <li>Awarded the Turing Prize for computer science excellence in 2020.</li>
+            <li>Founded the "Tech for Good" foundation, which funds STEM education globally.</li>
+        </ul>
+        
+        <hr>
+
+        <h2>Leave a Comment</h2>
+        <form method="POST" action="/submit_comment">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="first_name" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="last_name" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment_text" rows="4" required></textarea>
+
+            <button type="submit">Submit Tribute</button>
+        </form>
+
+        <hr>
+
+        <h2>Tribute Messages</h2>
+        <div class="comment-list">
+            {% for detail in user_details %}
+                <div class="comment-item">
+                    <p><strong>{{ detail.first_name }} {{ detail.last_name }}</strong> said:</p>
+                    <p>"{{ detail.comment_text }}"</p>
+                    
+                    <div class="comment-actions">
+                        <a href="{{ url_for('edit', id=detail.id) }}">Edit</a> 
+                        <a href="javascript:void(0)" onclick="confirmDelete({{ detail.id }})">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if not user_details %}
+                <p>No tributes left yet. Be the first!</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        // Function to prompt the user before deletion
+        function confirmDelete(id) {
+            if (confirm("Are you sure you want to delete this tribute message?")) {
+                // If confirmed, navigate to the delete endpoint
+                window.location.href = "{{ url_for('delete', id=0) }}".replace('0', id);
+            }
+        }
+    </script>
+</body>
+</html>
